@@ -2,8 +2,11 @@ package com.loose.coupling;
 
 public class LooseCouplingExample {
     public static void main(String[] args) {
-        UserDataProvider mongoDBProvider = new MongoDBProvider();
-        UserManager userManager = new UserManager(mongoDBProvider);
+
+        UserDataProvider userDataProvider = new PostGresSQL();
+        UserManager userManager=new UserManager(userDataProvider);
+
         System.out.println(userManager.getUserInfo());
+
     }
 }
